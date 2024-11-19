@@ -1,0 +1,16 @@
+worker_processes auto;
+
+events {
+    worker_connections 1024;
+}
+
+stream {
+    upstream backend_stream {
+        {{STREAM_SERVERS}}
+    }
+
+    server {
+        listen {{LISTEN_PORT_STREAM}};
+        proxy_pass backend_stream;
+    }
+}
