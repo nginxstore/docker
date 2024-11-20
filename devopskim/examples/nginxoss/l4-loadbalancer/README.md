@@ -19,7 +19,11 @@ docker build -t nginx-l4-loadbalancer .
 
 ### 2. **컨테이너 실행**
 ```bash
-docker run -d --name l4-nginx-lb   -p 54321:54321   -e TARGET_SERVERS_STREAM="192.168.1.101:3306,192.168.1.102:3306"   -e LISTEN_PORT_STREAM=54321   nginx-l4-loadbalancer
+docker run -d --name l4-nginx-lb \ 
+-p 3308:3308 \ 
+-e TARGET_SERVERS_STREAM="192.168.1.101:3306,192.168.1.102:3306" \ 
+-e LISTEN_PORT_STREAM=54321 \ 
+l4-loadbalancer 
 ```
 
 ### 3. **구성 확인**
