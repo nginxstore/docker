@@ -1,0 +1,9 @@
+server {
+    listen {{LISTEN_PORT_HTTP}};
+
+    location / {
+        proxy_pass {{PROTOCOL}}://{{PROXY_TARGET_SERVER}};
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
