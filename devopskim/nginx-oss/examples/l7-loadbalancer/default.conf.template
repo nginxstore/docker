@@ -6,7 +6,7 @@ server {
     listen {{LISTEN_PORT_HTTP}};
 
     location / {
-        proxy_pass http://backend_http;
+        proxy_pass http://{{HTTP_SERVERS}};
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
