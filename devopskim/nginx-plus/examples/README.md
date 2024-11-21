@@ -1,1 +1,0 @@
-# NGINX Plus Docker Repository: Examples
