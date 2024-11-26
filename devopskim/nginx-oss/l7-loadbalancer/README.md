@@ -29,8 +29,7 @@ nginx-l7-loadbalancer
 ### 3. **구성 확인**
 컨테이너 내부에서 생성된 NGINX 설정 파일을 확인합니다.
 ```bash
-docker exec -it l7-nginx-lb sh
-cat /etc/nginx/conf.d/default.conf
+docker exec -it l7-nginx-lb cat /etc/nginx/conf.d/default.conf
 ```
 
 

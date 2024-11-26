@@ -31,8 +31,7 @@ nginx-reverse-proxy
 ### 3. **구성 확인**
 컨테이너 내부에서 생성된 NGINX 설정 파일을 확인합니다.
 ```bash
-docker exec -it nginx-reverse-proxy sh
-cat /etc/nginx/conf.d/default.conf
+docker exec -it nginx-reverse-proxy cat /etc/nginx/conf.d/default.conf
 ```
 
 
