@@ -17,6 +17,6 @@ done
 # nginx.conf 템플릿을 실제 값으로 치환
 sed -e "s|{{STREAM_SERVERS}}|$UPSTREAM_STREAM_SERVERS|g" \
     -e "s|{{LISTEN_PORT_STREAM}}|$LISTEN_PORT_STREAM|g" \
-    /etc/nginx/templates/nginx.conf.template > /etc/nginx/nginx.conf
+    /tmp/nginx.conf.template > /etc/nginx/nginx.conf
 
 exec "$@"

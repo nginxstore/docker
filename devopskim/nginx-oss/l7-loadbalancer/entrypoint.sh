@@ -17,6 +17,6 @@ done
 # default.conf 템플릿에서 치환
 sed -e "s|{{HTTP_SERVERS}}|$UPSTREAM_HTTP_SERVERS|g" \
     -e "s|{{LISTEN_PORT_HTTP}}|$LISTEN_PORT_HTTP|g" \
-    /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf
+    /tmp/default.conf.template > /etc/nginx/conf.d/default.conf
 
 exec "$@"
