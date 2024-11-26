@@ -1,14 +1,11 @@
 FROM nginx:alpine
 
 # 템플릿 파일 복사
-COPY nginx.conf.template /etc/nginx/templates/nginx.conf.template
+COPY default.conf.template /tmp/default.conf.template
 
-# entrypoint.sh를 올바른 위치로 복사
+# 스크립트 복사 및 실행 권한 추가
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-
-# 실행 권한 추가
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-# ENTRYPOINT 설정
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]

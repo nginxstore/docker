@@ -22,15 +22,14 @@ docker build -t nginx-l4-loadbalancer .
 docker run -d --name l4-nginx-lb \ 
 -p 3308:3308 \ 
 -e TARGET_SERVERS_STREAM="192.168.1.101:3306,192.168.1.102:3306" \ 
--e LISTEN_PORT_STREAM=54321 \ 
-l4-loadbalancer 
+-e LISTEN_PORT_STREAM=3308 \ 
+nginx-l4-loadbalancer 
 ```
 
 ### 3. **구성 확인**
 컨테이너 내부에서 생성된 NGINX 설정 파일을 확인합니다.
 ```bash
-docker exec -it l4-nginx-lb sh
-cat /etc/nginx/nginx.conf
+docker exec -it l4-nginx-lb cat /etc/nginx/nginx.conf
 ```
 
 ## 환경 변수

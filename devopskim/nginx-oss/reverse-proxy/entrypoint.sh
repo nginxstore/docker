@@ -19,7 +19,7 @@ fi
 sed -e "s|{{PROTOCOL}}|$PROTOCOL|g" \
     -e "s|{{PROXY_TARGET_SERVER}}|$PROXY_TARGET_SERVER|g" \
     -e "s|{{LISTEN_PORT_HTTP}}|$LISTEN_PORT_HTTP|g" \
-    /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf
+    /tmp/default.conf.template > /etc/nginx/conf.d/default.conf
 
 # NGINX 실행
 exec "$@"
